@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="石灰石">
+<meta name="theme-color" content="#2c2c2a">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>石灰石业务记录</title>
+<style>
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html { margin: 0; padding: 0; }
+  body { margin: 0; padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom) 0; font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f5f5f0; color: #2c2c2a; font-size: 15px; line-height: 1.5; }
+  .container { max-width: 1100px; margin: 0 auto; padding: 16px; }
+  .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; gap: 10px; }
+  .header-left h1 { font-size: 20px; font-weight: 600; margin: 0 0 2px; }
+  .header-left .subtitle { color: #5f5e5a; font-size: 12px; }
+  .header-right { display: flex; align-items: center; gap: 8px; }
+  .user-email { font-size: 12px; color: #5f5e5a; max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  .summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 16px; }
+  .stat { background: #fff; border-radius: 10px; padding: 12px 14px; border: 1px solid #e8e6de; }
+  .stat-label { font-size: 12px; color: #5f5e5a; margin-bottom: 4px; }
+  .stat-value { font-size: 20px; font-weight: 600; }
+  .stat-value.warn { color: #a32d2d; }
+  .stat-value.ok { color: #0f6e56; }
+
+  .tabs { display: flex; gap: 4px; background: #fff; padding: 4px; border-radius: 10px; margin-bottom: 16px; border: 1px solid #e8e6de; }
+  .tab { flex: 1; padding: 10px; text-align: center; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 500; color: #5f5e5a; border: none; background: transparent; }
+  .tab.active { background: #2c2c2a; color: #fff; }
+
+  .card { background: #fff; border-radius: 12px; padding: 16px; border: 1px solid #e8e6de; margin-bottom: 16px; }
+  .card h2 { font-size: 16px; font-weight: 600; margin: 0 0 12px; }
+
+  .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+  .field { display: flex; flex-direction: column; }
+  .field label { font-size: 12px; color: #5f5e5a; margin-bottom: 4px; }
+  .field input, .field textarea, .field select {
+    padding: 10px 12px; border: 1px solid #d3d1c7; border-radius: 8px; font-size: 15px;
+    font-family: inherit; background: #fff; color: #2c2c2a; width: 100%;
+  }
+  .field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: #2c2c2a; }
+  .field.full { grid-column: 1 / -1; }
+  .field textarea { resize: vertical; min-height: 60px; }
+
+  .btn { padding: 11px 18px; border: none; border-radius: 8px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: inherit; }
+  .btn-primary { background: #2c2c2a; color: #fff; }
+  .btn-primary:active { opacity: 0.8; }
+  .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn-secondary { background: #f1efe8; color: #2c2c2a; border: 1px solid #d3d1c7; }
+  .btn-danger { background: #fff; color: #a32d2d; border: 1px solid #f0c0c0; }
+  .btn-sm { padding: 6px 12px; font-size: 13px; }
+  .btn-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+
+  .hint { font-size: 12px; color: #5f5e5a; margin-top: 4px; }
+  .computed { background: #f1efe8; border-radius: 8px; padding: 10px 12px; font-size: 13px; margin-top: 10px; }
+  .computed strong { color: #2c2c2a; }
+
+  .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+  .filter-bar input, .filter-bar select { padding: 8px 10px; border: 1px solid #d3d1c7; border-radius: 8px; font-size: 14px; font-family: inherit; background: #fff; }
+  .filter-bar input { flex: 1; min-width: 140px; }
+
+  .records { display: flex; flex-direction: column; gap: 10px; }
+  .record { background: #fff; border: 1px solid #e8e6de; border-radius: 10px; padding: 14px; }
+  .record-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 8px; }
+  .record-customer { font-weight: 600; font-size: 15px; }
+  .record-date { font-size: 12px; color: #5f5e5a; }
+  .record-body { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 8px; font-size: 13px; margin-bottom: 8px; }
+  .record-body div span { color: #5f5e5a; }
+  .record-body div strong { color: #2c2c2a; font-weight: 500; }
+  .record-notes { font-size: 12px; color: #5f5e5a; background: #f5f5f0; padding: 6px 8px; border-radius: 6px; margin-top: 6px; }
+  .record-footer { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 10px; padding-top: 10px; border-top: 1px solid #f1efe8; flex-wrap: wrap; }
+
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 500; }
+  .badge-pending { background: #e6f1fb; color: #0c447c; }
+  .badge-soon { background: #faeeda; color: #854f0b; }
+  .badge-overdue { background: #fcebeb; color: #791f1f; }
+  .badge-paid { background: #eaf3de; color: #27500a; }
+
+  .empty { text-align: center; color: #888780; padding: 40px 20px; }
+
+  .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #2c2c2a; color: #fff; padding: 12px 20px; border-radius: 8px; font-size: 14px; opacity: 0; transition: opacity 0.3s; pointer-events: none; z-index: 1000; max-width: 85%; text-align: center; }
+  .toast.show { opacity: 1; }
+  .toast.error { background: #a32d2d; }
+
+  /* Login screen */
+  .login-screen { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .login-box { background: #fff; border-radius: 14px; padding: 24px; border: 1px solid #e8e6de; width: 100%; max-width: 360px; }
+  .login-box h1 { font-size: 22px; font-weight: 600; margin: 0 0 4px; text-align: center; }
+  .login-box .sub { font-size: 13px; color: #5f5e5a; text-align: center; margin-bottom: 20px; }
+  .login-box .field { margin-bottom: 12px; }
+  .login-box .btn { width: 100%; margin-top: 8px; }
+  .login-switch { text-align: center; font-size: 13px; color: #5f5e5a; margin-top: 14px; }
+  .login-switch a { color: #2c2c2a; text-decoration: underline; cursor: pointer; font-weight: 500; }
+
+  .loading { text-align: center; padding: 60px 20px; color: #5f5e5a; }
+  .spinner { display: inline-block; width: 24px; height: 24px; border: 2px solid #d3d1c7; border-top-color: #2c2c2a; border-radius: 50%; animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  #app { display: none; }
+  #login { display: none; }
+
+  @media (max-width: 600px) {
+    .container { padding: 12px; }
+    h1 { font-size: 18px; }
+    .stat-value { font-size: 18px; }
+    .user-email { max-width: 80px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 加载中 -->
+<div id="init-loading" class="loading">
+  <div class="spinner"></div>
+  <div style="margin-top: 12px;">加载中...</div>
+</div>
+
+<!-- 登录界面 -->
+<div id="login" class="login-screen">
+  <div class="login-box">
+    <h1>石灰石业务记录</h1>
+    <div class="sub" id="login-sub">请登录您的账户</div>
+
+    <div class="field">
+      <label>邮箱</label>
+      <input type="email" id="login-email" placeholder="your@email.com" autocomplete="email">
+    </div>
+    <div class="field">
+      <label>密码（至少 6 位）</label>
+      <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password">
+    </div>
+
+    <button class="btn btn-primary" id="btn-login">登录</button>
+    <button class="btn btn-secondary" id="btn-signup" style="width:100%;margin-top:8px;display:none">注册新账户</button>
+
+    <div class="login-switch">
+      <span id="login-switch-text">没有账户？</span>
+      <a id="login-switch-link">注册</a>
+    </div>
+  </div>
+</div>
+
+<!-- 主应用 -->
+<div id="app">
+<div class="container">
+  <div class="header">
+    <div class="header-left">
+      <h1>石灰石业务记录</h1>
+      <div class="subtitle">云端同步 · 多端可用</div>
+    </div>
+    <div class="header-right">
+      <span class="user-email" id="user-email"></span>
+      <button class="btn btn-secondary btn-sm" id="btn-logout">退出</button>
+    </div>
+  </div>
+
+  <div class="summary" id="summary"></div>
+
+  <div class="tabs">
+    <button class="tab active" data-tab="add">新增记录</button>
+    <button class="tab" data-tab="list">记录列表</button>
+  </div>
+
+  <div id="tab-add" class="tab-content">
+    <div class="card">
+      <h2>新增发货记录</h2>
+      <div class="form-grid">
+        <div class="field">
+          <label>发货日期</label>
+          <input type="date" id="f-date">
+        </div>
+        <div class="field">
+          <label>客户名称</label>
+          <input type="text" id="f-customer" placeholder="例：XX建材厂">
+        </div>
+        <div class="field">
+          <label>发货量 (吨)</label>
+          <input type="number" id="f-tons" step="0.01" min="0" placeholder="0.00">
+        </div>
+        <div class="field">
+          <label>单价 (元/吨)</label>
+          <input type="number" id="f-price" step="0.01" min="0" placeholder="0.00">
+        </div>
+        <div class="field">
+          <label>白度</label>
+          <input type="number" id="f-whiteness" step="0.1" min="0" max="100" placeholder="例：92.5">
+        </div>
+        <div class="field">
+          <label>目数</label>
+          <input type="number" id="f-mesh" min="0" placeholder="例：325">
+        </div>
+        <div class="field">
+          <label>账期 (天)</label>
+          <input type="number" id="f-credit" min="0" value="30">
+        </div>
+        <div class="field full">
+          <label>备注</label>
+          <textarea id="f-notes" placeholder="选填"></textarea>
+        </div>
+      </div>
+      <div class="computed" id="computed-hint">
+        应收金额：<strong>¥ 0.00</strong> · 到期日：<strong>—</strong>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-primary" id="btn-save">保存记录</button>
+        <button class="btn btn-secondary" id="btn-reset">清空</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-list" class="tab-content" style="display:none">
+    <div class="card">
+      <div class="filter-bar">
+        <input type="text" id="filter-search" placeholder="搜索客户名称...">
+        <select id="filter-status">
+          <option value="">全部状态</option>
+          <option value="pending">未到期</option>
+          <option value="soon">即将到期</option>
+          <option value="overdue">已逾期</option>
+          <option value="paid">已收款</option>
+        </select>
+        <button class="btn btn-secondary btn-sm" id="btn-refresh">刷新</button>
+        <button class="btn btn-secondary btn-sm" id="btn-export">导出CSV</button>
+      </div>
+      <div class="records" id="records-list"></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Supabase client -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+// ============ 配置 ============
+const SUPABASE_URL = 'https://iudpzrtbxdljuesfmarw.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Iml1ZHB6cnRieGRsanVlc2ZtYXJ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU2NjU4MjMsImV4cCI6MjA5MTI0MTgyM30.UQNlv2jS5tQYDciC8xT-jLD07Srvhww-z9d5feTQKQQ';
+
+const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// ============ 状态 ============
+let records = [];
+let editingId = null;
+let currentUser = null;
+let authMode = 'login'; // 'login' | 'signup'
+
+// ============ 工具函数 ============
+const fmt = n => '¥ ' + (Number(n) || 0).toLocaleString('zh-CN', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+const fmtNum = n => (Number(n) || 0).toLocaleString('zh-CN', {maximumFractionDigits: 2});
+const todayStr = () => new Date().toISOString().slice(0, 10);
+const addDays = (dateStr, days) => {
+  const d = new Date(dateStr);
+  d.setDate(d.getDate() + Number(days || 0));
+  return d.toISOString().slice(0, 10);
+};
+const daysBetween = (a, b) => Math.floor((new Date(b) - new Date(a)) / 86400000);
+
+function showToast(msg, isError = false) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (isError ? ' error' : '');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+function getDueDate(rec) {
+  return addDays(rec.shipment_date, rec.credit_days);
+}
+
+function getStatus(rec) {
+  if (rec.paid) return { key: 'paid', label: '已收款', cls: 'badge-paid' };
+  const due = getDueDate(rec);
+  const diff = daysBetween(todayStr(), due);
+  if (diff < 0) return { key: 'overdue', label: `逾期${-diff}天`, cls: 'badge-overdue' };
+  if (diff <= 7) return { key: 'soon', label: `${diff}天内到期`, cls: 'badge-soon' };
+  return { key: 'pending', label: `${diff}天后到期`, cls: 'badge-pending' };
+}
+
+function getAmount(rec) {
+  return (Number(rec.tons) || 0) * (Number(rec.price) || 0);
+}
+
+// ============ 认证 ============
+async function checkSession() {
+  const { data: { session } } = await sb.auth.getSession();
+  document.getElementById('init-loading').style.display = 'none';
+  if (session && session.user) {
+    currentUser = session.user;
+    showApp();
+  } else {
+    showLogin();
+  }
+}
+
+function showLogin() {
+  document.getElementById('login').style.display = 'flex';
+  document.getElementById('app').style.display = 'none';
+}
+
+function showApp() {
+  document.getElementById('login').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  document.getElementById('user-email').textContent = currentUser.email;
+  loadRecords();
+}
+
+function switchAuthMode() {
+  authMode = authMode === 'login' ? 'signup' : 'login';
+  const isLogin = authMode === 'login';
+  document.getElementById('login-sub').textContent = isLogin ? '请登录您的账户' : '创建新账户';
+  document.getElementById('btn-login').style.display = isLogin ? 'block' : 'none';
+  document.getElementById('btn-signup').style.display = isLogin ? 'none' : 'block';
+  document.getElementById('login-switch-text').textContent = isLogin ? '没有账户？' : '已有账户？';
+  document.getElementById('login-switch-link').textContent = isLogin ? '注册' : '登录';
+}
+
+async function doLogin() {
+  const email = document.getElementById('login-email').value.trim();
+  const password = document.getElementById('login-password').value;
+  if (!email || !password) { showToast('请填写邮箱和密码', true); return; }
+
+  const btn = document.getElementById('btn-login');
+  btn.disabled = true; btn.textContent = '登录中...';
+
+  const { data, error } = await sb.auth.signInWithPassword({ email, password });
+
+  btn.disabled = false; btn.textContent = '登录';
+  if (error) { showToast('登录失败：' + error.message, true); return; }
+
+  currentUser = data.user;
+  showToast('登录成功');
+  showApp();
+}
+
+async function doSignup() {
+  const email = document.getElementById('login-email').value.trim();
+  const password = document.getElementById('login-password').value;
+  if (!email || !password) { showToast('请填写邮箱和密码', true); return; }
+  if (password.length < 6) { showToast('密码至少 6 位', true); return; }
+
+  const btn = document.getElementById('btn-signup');
+  btn.disabled = true; btn.textContent = '注册中...';
+
+  const { data, error } = await sb.auth.signUp({ email, password });
+
+  btn.disabled = false; btn.textContent = '注册新账户';
+  if (error) { showToast('注册失败：' + error.message, true); return; }
+
+  if (data.user && data.session) {
+    currentUser = data.user;
+    showToast('注册成功');
+    showApp();
+  } else {
+    showToast('注册成功，请检查邮箱完成验证后登录');
+    switchAuthMode();
+  }
+}
+
+async function doLogout() {
+  if (!confirm('确定要退出登录吗？')) return;
+  await sb.auth.signOut();
+  currentUser = null;
+  records = [];
+  document.getElementById('login-email').value = '';
+  document.getElementById('login-password').value = '';
+  showLogin();
+  showToast('已退出');
+}
+
+// ============ 数据读写 (Supabase) ============
+async function loadRecords() {
+  const { data, error } = await supabase
+    .from('shipments')
+    .select('*')
+    .order('shipment_date', { ascending: false })
+    .order('created_at', { ascending: false });
+
+  if (error) {
+    showToast('加载失败：' + error.message, true);
+    records = [];
+  } else {
+    records = data || [];
+  }
+  render();
+}
+
+async function saveRecord() {
+  const d = getFormData();
+  if (!d.shipment_date) { showToast('请填写日期', true); return; }
+  if (!d.customer) { showToast('请填写客户名称', true); return; }
+  if (!d.tons || d.tons <= 0) { showToast('请填写发货量', true); return; }
+
+  const btn = document.getElementById('btn-save');
+  btn.disabled = true; btn.textContent = '保存中...';
+
+  const payload = {
+    ...d,
+    user_id: currentUser.id,
+  };
+
+  let error;
+  if (editingId) {
+    const res = await sb.from('shipments').update(payload).eq('id', editingId);
+    error = res.error;
+  } else {
+    const res = await sb.from('shipments').insert([payload]);
+    error = res.error;
+  }
+
+  btn.disabled = false;
+  btn.textContent = editingId ? '更新记录' : '保存记录';
+
+  if (error) { showToast('保存失败：' + error.message, true); return; }
+
+  showToast(editingId ? '已更新' : '已保存');
+  resetForm();
+  await loadRecords();
+  document.querySelector('[data-tab="list"]').click();
+}
+
+async function deleteRecord(id) {
+  if (!confirm('确定删除这条记录吗？')) return;
+  const { error } = await sb.from('shipments').delete().eq('id', id);
+  if (error) { showToast('删除失败：' + error.message, true); return; }
+  showToast('已删除');
+  await loadRecords();
+}
+
+async function togglePaid(id) {
+  const rec = records.find(r => r.id === id);
+  if (!rec) return;
+  const newPaid = !rec.paid;
+  const { error } = await supabase
+    .from('shipments')
+    .update({ paid: newPaid, paid_at: newPaid ? todayStr() : null })
+    .eq('id', id);
+  if (error) { showToast('操作失败：' + error.message, true); return; }
+  showToast(newPaid ? '标记为已收款' : '标记为未收款');
+  await loadRecords();
+}
+
+// ============ 表单 ============
+function getFormData() {
+  return {
+    shipment_date: document.getElementById('f-date').value,
+    customer: document.getElementById('f-customer').value.trim(),
+    tons: parseFloat(document.getElementById('f-tons').value) || 0,
+    price: parseFloat(document.getElementById('f-price').value) || 0,
+    whiteness: document.getElementById('f-whiteness').value ? parseFloat(document.getElementById('f-whiteness').value) : null,
+    mesh: document.getElementById('f-mesh').value ? parseInt(document.getElementById('f-mesh').value) : null,
+    credit_days: parseInt(document.getElementById('f-credit').value) || 0,
+    notes: document.getElementById('f-notes').value.trim() || null,
+  };
+}
+
+function setFormData(d) {
+  document.getElementById('f-date').value = d.shipment_date || todayStr();
+  document.getElementById('f-customer').value = d.customer || '';
+  document.getElementById('f-tons').value = d.tons || '';
+  document.getElementById('f-price').value = d.price || '';
+  document.getElementById('f-whiteness').value = d.whiteness ?? '';
+  document.getElementById('f-mesh').value = d.mesh ?? '';
+  document.getElementById('f-credit').value = d.credit_days ?? 30;
+  document.getElementById('f-notes').value = d.notes || '';
+  updateComputed();
+}
+
+function resetForm() {
+  editingId = null;
+  setFormData({ shipment_date: todayStr(), credit_days: 30 });
+  document.getElementById('btn-save').textContent = '保存记录';
+}
+
+function updateComputed() {
+  const d = getFormData();
+  const amount = d.tons * d.price;
+  const due = d.shipment_date ? addDays(d.shipment_date, d.credit_days) : '—';
+  document.getElementById('computed-hint').innerHTML =
+    `应收金额：<strong>${fmt(amount)}</strong> · 到期日：<strong>${due}</strong>`;
+}
+
+function editRecord(id) {
+  const rec = records.find(r => r.id === id);
+  if (!rec) return;
+  editingId = id;
+  setFormData(rec);
+  document.getElementById('btn-save').textContent = '更新记录';
+  document.querySelector('[data-tab="add"]').click();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ============ 渲染 ============
+function renderSummary() {
+  const totalTons = records.reduce((s, r) => s + (Number(r.tons) || 0), 0);
+  const totalAmount = records.reduce((s, r) => s + getAmount(r), 0);
+  const unpaidAmount = records.filter(r => !r.paid).reduce((s, r) => s + getAmount(r), 0);
+  const overdueAmount = records.filter(r => !r.paid && daysBetween(todayStr(), getDueDate(r)) < 0).reduce((s, r) => s + getAmount(r), 0);
+
+  document.getElementById('summary').innerHTML = `
+    <div class="stat"><div class="stat-label">总发货量</div><div class="stat-value">${fmtNum(totalTons)} 吨</div></div>
+    <div class="stat"><div class="stat-label">总应收</div><div class="stat-value">${fmt(totalAmount)}</div></div>
+    <div class="stat"><div class="stat-label">未收金额</div><div class="stat-value ${unpaidAmount > 0 ? 'warn' : 'ok'}">${fmt(unpaidAmount)}</div></div>
+    <div class="stat"><div class="stat-label">逾期金额</div><div class="stat-value ${overdueAmount > 0 ? 'warn' : 'ok'}">${fmt(overdueAmount)}</div></div>
+  `;
+}
+
+function renderList() {
+  const search = document.getElementById('filter-search').value.toLowerCase();
+  const statusFilter = document.getElementById('filter-status').value;
+
+  let filtered = records.slice();
+  if (search) filtered = filtered.filter(r => (r.customer || '').toLowerCase().includes(search));
+  if (statusFilter) filtered = filtered.filter(r => getStatus(r).key === statusFilter);
+
+  const list = document.getElementById('records-list');
+  if (filtered.length === 0) {
+    list.innerHTML = '<div class="empty">暂无记录</div>';
+    return;
+  }
+
+  list.innerHTML = filtered.map(r => {
+    const status = getStatus(r);
+    const amount = getAmount(r);
+    const due = getDueDate(r);
+    return `
+      <div class="record">
+        <div class="record-header">
+          <div>
+            <div class="record-customer">${escapeHtml(r.customer)}</div>
+            <div class="record-date">${r.shipment_date} · ${r.credit_days}天账期 · 到期 ${due}</div>
+          </div>
+          <span class="badge ${status.cls}">${status.label}</span>
+        </div>
+        <div class="record-body">
+          <div><span>发货量</span><br><strong>${fmtNum(r.tons)} 吨</strong></div>
+          <div><span>单价</span><br><strong>¥${fmtNum(r.price)}</strong></div>
+          <div><span>应收</span><br><strong>${fmt(amount)}</strong></div>
+          ${r.whiteness != null ? `<div><span>白度</span><br><strong>${r.whiteness}</strong></div>` : ''}
+          ${r.mesh != null ? `<div><span>目数</span><br><strong>${r.mesh}</strong></div>` : ''}
+        </div>
+        ${r.notes ? `<div class="record-notes">${escapeHtml(r.notes)}</div>` : ''}
+        <div class="record-footer">
+          <button class="btn ${r.paid ? 'btn-secondary' : 'btn-primary'} btn-sm" onclick="togglePaid('${r.id}')">
+            ${r.paid ? '↩ 撤销收款' : '✓ 标记已收款'}
+          </button>
+          <div style="display:flex;gap:6px">
+            <button class="btn btn-secondary btn-sm" onclick="editRecord('${r.id}')">编辑</button>
+            <button class="btn btn-danger btn-sm" onclick="deleteRecord('${r.id}')">删除</button>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function escapeHtml(s) {
+  return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+}
+
+function render() {
+  renderSummary();
+  renderList();
+}
+
+// ============ 导出 ============
+function exportCSV() {
+  if (records.length === 0) { showToast('没有数据可导出', true); return; }
+  const headers = ['日期','客户','发货量(吨)','单价','应收金额','白度','目数','账期(天)','到期日','状态','收款日','备注'];
+  const rows = records.map(r => [
+    r.shipment_date, r.customer, r.tons, r.price, getAmount(r).toFixed(2),
+    r.whiteness ?? '', r.mesh ?? '', r.credit_days, getDueDate(r),
+    r.paid ? '已收款' : getStatus(r).label,
+    r.paid_at || '', (r.notes || '').replace(/[\r\n]/g, ' ')
+  ]);
+  const csv = [headers, ...rows].map(row =>
+    row.map(v => {
+      const s = String(v ?? '');
+      return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+    }).join(',')
+  ).join('\n');
+
+  const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `石灰石记录_${todayStr()}.csv`;
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('已导出');
+}
+
+// ============ 事件绑定 ============
+document.querySelectorAll('.tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+    document.getElementById('tab-' + btn.dataset.tab).style.display = 'block';
+  });
+});
+
+['f-date','f-tons','f-price','f-credit'].forEach(id => {
+  document.getElementById(id).addEventListener('input', updateComputed);
+});
+
+document.getElementById('btn-save').addEventListener('click', saveRecord);
+document.getElementById('btn-reset').addEventListener('click', resetForm);
+document.getElementById('btn-export').addEventListener('click', exportCSV);
+document.getElementById('btn-refresh').addEventListener('click', loadRecords);
+document.getElementById('btn-logout').addEventListener('click', doLogout);
+document.getElementById('filter-search').addEventListener('input', renderList);
+document.getElementById('filter-status').addEventListener('change', renderList);
+
+document.getElementById('btn-login').addEventListener('click', doLogin);
+document.getElementById('btn-signup').addEventListener('click', doSignup);
+document.getElementById('login-switch-link').addEventListener('click', switchAuthMode);
+document.getElementById('login-password').addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    if (authMode === 'login') doLogin(); else doSignup();
+  }
+});
+
+window.editRecord = editRecord;
+window.deleteRecord = deleteRecord;
+window.togglePaid = togglePaid;
+
+// 初始化
+document.getElementById('f-date').value = todayStr();
+checkSession();
+</script>
+</body>
+</html>
