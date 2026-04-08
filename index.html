@@ -35,7 +35,7 @@
   .card { background: #fff; border-radius: 12px; padding: 16px; border: 1px solid #e8e6de; margin-bottom: 16px; }
   .card h2 { font-size: 16px; font-weight: 600; margin: 0 0 12px; }
 
-  .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+  .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px 16px; }
   .field { display: flex; flex-direction: column; }
   .field label { font-size: 12px; color: #5f5e5a; margin-bottom: 4px; }
   .field input, .field textarea, .field select {
@@ -108,6 +108,11 @@
     h1 { font-size: 18px; }
     .stat-value { font-size: 18px; }
     .user-email { max-width: 80px; }
+    .form-grid { grid-template-columns: 1fr 1fr; gap: 12px 12px; }
+    .field.full { grid-column: 1 / -1; }
+  }
+  @media (max-width: 420px) {
+    .form-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
